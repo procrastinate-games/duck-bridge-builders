@@ -2,7 +2,7 @@ import { defineConfig } from "cf/config";
 
 export default defineConfig({
   worker: {
-    "name": "duck-bridge-builders",
+    "name": "pg-duck-bridge-builders",
     "compatibilityDate": "2026-11-04",
     "observability": {
       "enabled": true

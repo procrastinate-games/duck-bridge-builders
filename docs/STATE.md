@@ -19,7 +19,7 @@ User playtest for feel (controls, difficulty curve, audio mix). Browser test sui
 none
 
 ## Hosting
-Private repo github.com/Kifrip/duck-bridge-builders; live at https://duck-bridge-builders.register-c02.workers.dev (deploy: `npm run deploy`). No CI workflow yet: the Kifrip gh token lacks the `workflow` scope.
+Private repo github.com/Kifrip/duck-bridge-builders; live at https://pg-duck-bridge-builders.register-c02.workers.dev (deploy: `npm run deploy`). No CI workflow yet: the Kifrip gh token lacks the `workflow` scope.
 
 ## Notes for next session
 Pane-hidden tabs pause rAF — use window.advanceTime / __GAME__.step for tests. `npm run shots` gives full-size screenshots.

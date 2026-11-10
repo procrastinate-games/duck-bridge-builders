@@ -25,9 +25,11 @@ npm run shots       # (dev server running) captures screenshots of the full buil
 
 ## Build & deploy (Cloudflare)
 
-Live: https://duck-bridge-builders.register-c02.workers.dev
+Live: https://pg-duck-bridge-builders.register-c02.workers.dev
 
 Hosted as a static-assets Cloudflare Worker, configured by `cloudflare.config.ts` and deployed with the [`cf` CLI](https://developers.cloudflare.com/cf/):
+
+Every push to `main` is deployed automatically by Cloudflare Workers Builds: it runs `npm run sim-check`, then `npx cf deploy` to the Worker `pg-duck-bridge-builders`. To deploy by hand:
 
 ```bash
 npx cf auth login   # once

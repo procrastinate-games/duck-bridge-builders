@@ -19,7 +19,7 @@
 
 - **Package manager:** npm
 - **Build:** Vite (`base: './'` so the build works from any static-host sub-path)
-- **Hosting:** Cloudflare Workers static assets — https://duck-bridge-builders.register-c02.workers.dev (`cf deploy`)
+- **Hosting:** Cloudflare Workers static assets — https://pg-duck-bridge-builders.register-c02.workers.dev (`cf deploy`)
 - **Testing:** `node --test` + `scripts/browser-test.mjs` (Chrome DevTools protocol, from game-creator) for browser tests; `scripts/sim-check.mjs` for headless structural-solver checks
 - **Linting / formatting:** n/a
 - **Asset / binary storage:** no binary assets — everything is procedural (no Git LFS)
