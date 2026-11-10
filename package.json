@@ -1,0 +1,24 @@
+{
+  "name": "duck-bridge-builders",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "sim-check": "node scripts/sim-check.mjs",
+    "shots": "node scripts/shots.mjs",
+    "deploy": "npm run build && npx gh-pages -d dist",
+    "test": "node --test --test-concurrency=1 \"tests/**/*.spec.js\"",
+    "test:headed": "BROWSER_TEST_HEADED=1 node --test --test-concurrency=1 \"tests/**/*.spec.js\""
+  },
+  "devDependencies": {
+    "vite": "^8.3.6"
+  },
+  "dependencies": {
+    "@dimforge/rapier3d-compat": "^0.21.0",
+    "three": "^0.187.0"
+  },
+  "description": "Duck Bridge Builders \u2014 cozy 3D physics bridge-building game (Three.js + Rapier)."
+}
