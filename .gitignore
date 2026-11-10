@@ -26,3 +26,13 @@ dist-ssr
 output/
 test-results/
 .claude/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
+
+# cf local state, build output and generated types
+.cloudflare/

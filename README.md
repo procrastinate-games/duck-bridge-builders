@@ -23,13 +23,15 @@ npm run sim-check   # builds reference designs for all 5 levels under game rules
 npm run shots       # (dev server running) captures screenshots of the full build → test → repair loop into output/shots
 ```
 
-## Build & deploy (static, GitHub Pages)
+## Build & deploy (Cloudflare)
+
+Live: https://duck-bridge-builders.register-c02.workers.dev
+
+Hosted as a static-assets Cloudflare Worker, configured by `cloudflare.config.ts` and deployed with the [`cf` CLI](https://developers.cloudflare.com/cf/):
+
 ```bash
-npm run build       # outputs dist/ with relative paths (base: './')
-npm run preview
+npx cf auth login   # once
+npm run deploy      # = cf deploy: builds with Vite and uploads dist to Cloudflare
 ```
-**GitHub Actions (recommended):** push to a GitHub repo, then Settings → Pages → Source: *GitHub Actions*. `.github/workflows/deploy.yml` runs sim-check, builds and deploys on every push to `main`.
 
-**Manual:** `npm run deploy` publishes `dist/` to the `gh-pages` branch; then set Pages → Source: *Deploy from branch → gh-pages*.
-
-The game is a single page with no routes, so refreshing never breaks. Progress is saved in `localStorage`.
+`npm run build` alone produces a plain static `dist/` (relative paths via `base: './'`), so the game also runs on any static host (GitHub Pages, Netlify, an S3 bucket). The Worker serves `index.html` for unknown paths (single-page-application mode), so refreshing never breaks. Progress is saved in `localStorage`.

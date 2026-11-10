@@ -9,16 +9,18 @@
     "preview": "vite preview",
     "sim-check": "node scripts/sim-check.mjs",
     "shots": "node scripts/shots.mjs",
-    "deploy": "npm run build && npx gh-pages -d dist",
+    "deploy": "cf deploy",
     "test": "node --test --test-concurrency=1 \"tests/**/*.spec.js\"",
     "test:headed": "BROWSER_TEST_HEADED=1 node --test --test-concurrency=1 \"tests/**/*.spec.js\""
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^2.0.0-beta.v.0",
+    "cf": "^1.0.0-beta.28",
     "vite": "^8.3.6"
   },
   "dependencies": {
     "@dimforge/rapier3d-compat": "^0.21.0",
     "three": "^0.187.0"
   },
-  "description": "Duck Bridge Builders \u2014 cozy 3D physics bridge-building game (Three.js + Rapier)."
+  "description": "Duck Bridge Builders — cozy 3D physics bridge-building game (Three.js + Rapier)."
 }
