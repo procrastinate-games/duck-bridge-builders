@@ -2,7 +2,7 @@ import { test as base, expect } from '../../scripts/browser-test.mjs';
 
 // fresh save once per test (sessionStorage survives reloads within the same tab)
 const MANUAL_CLOCK = {
-  content: "window.__MANUAL_CLOCK__ = true; try { if (!sessionStorage.getItem('dbb-test')) { localStorage.clear(); sessionStorage.setItem('dbb-test', '1'); } } catch {}",
+  content: "window.__MANUAL_CLOCK__ = true; window.__TEST_NO_DRAW__ = true; try { if (!sessionStorage.getItem('dbb-test')) { localStorage.clear(); sessionStorage.setItem('dbb-test', '1'); } } catch {}",
 };
 
 async function boot(page) {

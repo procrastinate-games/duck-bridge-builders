@@ -50,6 +50,8 @@ export class Game {
     this.acc = 0;
     this.time = 0;
     this.manualClock = !!window.__MANUAL_CLOCK__;
+    // automated tests on GPU-less machines: simulate everything, draw nothing
+    this.noDraw = !!window.__TEST_NO_DRAW__;
     this.flags = {};
     this.feedbackT = 0;
     this.inventoryDirty = true;
@@ -641,7 +643,7 @@ export class Game {
     }
 
     this.updateHud(dt);
-    if (draw) this.renderer.render(this.scene, this.camera);
+    if (draw && !this.noDraw) this.renderer.render(this.scene, this.camera);
   }
 
   updateHud(dt) {

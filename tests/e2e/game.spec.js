@@ -308,6 +308,7 @@ test.describe('Duck Bridge Builders — core loop', () => {
       T.buildDesign(window.SOL[4].find((d) => d.expect === 'hippo'));
       T.tap('KeyT');
       g.step(60 * 10);
+      g.renderer.render(g.scene, g.camera); // tests skip drawing; render one frame to count
       return g.renderer.info.render.calls;
     });
     expect(calls).toBeLessThan(400);
