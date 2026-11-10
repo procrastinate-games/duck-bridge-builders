@@ -13,13 +13,13 @@
 | three | ^0.187.0 | Rendering, scene graph, materials |
 | @dimforge/rapier3d-compat | ^0.21.0 | Rigid bodies (debris, dropped pieces, falling characters), colliders, beaver character controller, raycasts |
 | vite | ^8 | Dev server and static build |
-| @cloudflare/vite-plugin, cf | beta | Deploy as a static-assets Cloudflare Worker (`cloudflare.config.ts`, `npm run deploy`) |
+| wrangler | 4.159.0 | Publish the ordinary Vite dist/ artifact through GitHub Actions |
 
 ## Tooling
 
 - **Package manager:** npm
 - **Build:** Vite (`base: './'` so the build works from any static-host sub-path)
-- **Hosting:** Cloudflare Workers static assets — https://pg-duck-bridge-builders.register-c02.workers.dev (`cf deploy`)
+- **Hosting:** Cloudflare Workers static assets — https://pg-duck-bridge-builders.register-c02.workers.dev (GitHub Actions, pinned Wrangler)
 - **Testing:** `node --test` + `scripts/browser-test.mjs` (Chrome DevTools protocol, from game-creator) for browser tests; `scripts/sim-check.mjs` for headless structural-solver checks
 - **Linting / formatting:** n/a
 - **Asset / binary storage:** no binary assets — everything is procedural (no Git LFS)

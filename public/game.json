@@ -1,0 +1,26 @@
+{
+  "slug": "duck-bridge-builders",
+  "title": "Duck Bridge Builders",
+  "shortDescription": "Build a bridge. Guide the ducklings. Brace for the hippo.",
+  "description": "Carry timber as a beaver builder and construct a bridge across five cozy 3D landscapes. Test your design with ten ducklings, then see whether it can support a very heavy hippo inspector. Watch the physics, repair the damage, and try again.",
+  "primaryCategory": "Simulation",
+  "categories": [
+    "Simulation",
+    "Puzzle",
+    "Physics"
+  ],
+  "dimension": "3D",
+  "controls": [
+    "Desktop keyboard and mouse: use WASD to move the beaver and the pointer to aim building pieces. Follow the on-screen guide for picking up, rotating, placing, and reinforcing timber.",
+    "Use Test Bridge to start an inspection, then repair or restart after the results. Touch controls are not available in this version."
+  ],
+  "languages": "English",
+  "saveNote": "Level results and settings are stored locally in this browser. Existing saved progress stays on the same game origin. Hidden tabs pause play.",
+  "coverAlt": "Duck Bridge Builders showing a beaver beside a river and timber supplies in a colorful 3D landscape",
+  "accent": "lime",
+  "schemaVersion": 1,
+  "status": "published",
+  "featured": false,
+  "showSource": false,
+  "startQuery": ""
+}

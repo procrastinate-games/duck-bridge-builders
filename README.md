@@ -1,3 +1,5 @@
+> Publishing now uses [the organization GitHub Actions pipeline](docs/platform-publishing.md). This supersedes older deployment notes below.
+
 # Duck Bridge Builders 🦫🪵🐥
 
 A cozy 3D physics bridge-building game. You are a beaver builder: carry planks, beams and posts by hand, nail them into a bridge, then watch ten ducklings — and a very large hippo inspector — try to cross. When it breaks, wade in and repair it.
