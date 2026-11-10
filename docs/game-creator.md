@@ -42,7 +42,7 @@ These are the owner’s platform-specific integration rules. For game-developmen
 | Planning and continuity | Preserve existing docs/gameplan.md, docs/tech.md, docs/STATE.md, architectural decisions and milestones. In an existing game resume from these; do not rerun fresh-project scaffolding over the game or substitute upstream example engine versions for the approved stack. |
 | Starter replacement | In a new game, replace src/main.js, src/rules.js and the example scene/styles as appropriate. Remove or replace tests/rules.test.js together with src/rules.js so no dangling example import remains. Preserve tests/manifest.test.js and scripts/platform/; add the actual game tests to npm test. |
 | Browser build | Duck uses Vite with base './' and dist/, so it matches the publishing contract. Development/preview ports (5180/5181 in Duck), ES module layout and additional local libraries can differ. Keep browser-test server URLs aligned with the chosen ports. |
-| Controls | Duck's approved v1 is desktop keyboard/mouse. Preserve that choice and the honest no-touch note in its catalog metadata. The template's mobile defaults apply to new designs, not as an instruction to add unsolicited touch controls to an existing game. |
+| Controls | Duck's approved v1 is desktop keyboard/mouse. Preserve that choice and the honest no-touch note in its catalog metadata. Mobile support is mandatory by default, including complex games; only an explicit owner-approved exception permits desktop-only support. Duck's documented v1 exception is preserved. Declare supportedDevices as ["desktop"] for that exception so the portal shows Desktop only. |
 | Saves | Duck's existing key is duck-bridge-builders-save-v1. Preserve it and its data format. The pg:<slug>: prefix is for new storage; do not rename legacy keys to make an existing game look like the template. |
 | Verification | Keep Duck's sim-check and browser tests. Its publishing workflow intentionally adds the physics check and runs browser regressions against the chosen server. A new game's npm test must run its own meaningful checks, rather than only the template's helper example. |
 
@@ -51,3 +51,7 @@ The same separation applies to other engines: the skill owns gameplay architectu
 ## Review reference
 
 Reviewed 2026-11-10 against upstream commit [53676bd](https://github.com/PlayableIntelligence/game-creator/tree/53676bd2a524989745ce7cbd4128c17e8a20dd3d): README, make-game, viral-game, scaffold, agents-bootstrap, live-iterate and game-qa guidance. This is a review reference, not a vendored installation or a promise that upstream main will never change. Reconcile material upstream changes when loading the skill.
+
+## Device support metadata
+
+New games must work on phones as well as computers: `supportedDevices: ["desktop", "mobile"]`. A desktop-only game requires an explicit exception from the owner, recorded in the gameplan, and `supportedDevices: ["desktop"]`. Complexity or engine choice alone does not justify excluding phones. Catalog labels and the game page use this field; control instructions must agree with it. Legacy manifests without the field retain the platform default of both devices.

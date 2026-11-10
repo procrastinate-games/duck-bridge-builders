@@ -22,5 +22,8 @@
   "status": "published",
   "featured": false,
   "showSource": false,
-  "startQuery": ""
+  "startQuery": "",
+  "supportedDevices": [
+    "desktop"
+  ]
 }

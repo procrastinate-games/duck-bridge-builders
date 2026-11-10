@@ -11,7 +11,7 @@
 
 - The deployed game must be a static browser build: client code only, no required backend or external runtime services. This contract supports both small games and substantial browser games.
 - Repository name = game slug. Publishing URL: `https://pg-<slug>.register-c02.workers.dev/`.
-- Support iframe embedding and relative asset URLs; never navigate the parent window. For new games, default to keyboard and touch controls and layouts from 360 px through landscape. For an existing game, preserve the user-approved target platforms and controls in docs/gameplan.md and docs/tech.md; adding a mobile port is a separate gameplay task. Catalog controls must describe actual support.
+- Support iframe embedding and relative asset URLs; never navigate the parent window. For new games, default to keyboard and touch controls and layouts from 360 px through landscape. Mobile support is required unless the owner explicitly approves a device exception in the gameplan; complexity alone is not an exception. Preserve an existing explicit exception when maintaining a game. Set supportedDevices in public/game.json to the devices actually supported, and describe the real controls; desktop-only games must be labelled on the portal.
 - Store new saves in localStorage under `pg:<slug>:`. Preserve all existing save keys and formats when maintaining a game; never reset or migrate player data without explicit instructions.
 - No trackers, advertising, or unlicensed third-party assets.
 - Keep `npm test` and `npm run build` passing. Existing game-specific checks must also pass.
@@ -34,3 +34,5 @@
 - Cross-module events use EventBus; state uses GameState; balance values live in src/core/Constants.js and levels in src/level/levels.js. Bridge success/failure must come from the physics solver, never scripted outcomes.
 - Preserve the existing localStorage key duck-bridge-builders-save-v1 and save format. Do not migrate it to a new prefix.
 - Commands: npm run dev; npm run build; npm run sim-check (reference bridges); npm test (browser regressions). Browser helpers use ports from browser.config.mjs and vite.config.js. Existing render_game_to_text/advanceTime/debug hooks support focused checks.
+
+- New games default to `supportedDevices: ["desktop", "mobile"]` in public/game.json. Use `["desktop"]` only for an explicit owner-approved desktop-only exception. Verify touch input and layout for games that declare mobile support.
